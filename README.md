@@ -1,1 +1,2 @@
 # findmates_telegrambot
+@FindmatesBot
