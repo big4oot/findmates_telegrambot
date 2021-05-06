@@ -1,4 +1,4 @@
-import bot_config
+﻿import bot_config
 import requests
 import json
 
@@ -10,7 +10,7 @@ class Users_db():
 		response = requests.request("POST", Users_db._url, data=payload, headers=bot_config.headers)
 
 	def get_users_page():
-		response = requests.request("GET", Users_db._url, headers=headers)
+		response = requests.request("GET", Users_db._url, headers=bot_config.headers)
 		users_data = json.loads(response.text)
 		text = ''
 		for user in users_data:
@@ -29,7 +29,7 @@ class Projects_db():
 		response = requests.request("POST", Projects_db._url, data=payload, headers=bot_config.headers)
 
 	def get_projects_page():
-		response = requests.request("GET", Projects_db._url, headers=headers)
+		response = requests.request("GET", Projects_db._url, headers=bot_config.headers)
 		projects_data = json.loads(response.text)
 		text = ''
 		for project in projects_data:
